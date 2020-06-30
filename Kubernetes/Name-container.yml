@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: kplabs-nginx
+  name: kplabs-multi-container
+spec:
+  containers:
+  - image: nginx
+    name: first-container
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  - image: mykplabs/kubernetes:nginx
+    name: second-container
+  - image: mykplabs/kubernetes:nginx
+    name: third-container
+status: {}

@@ -1,0 +1,208 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: "2020-06-27T10:00:11Z"
+    cni.projectcalico.org/podIP: 10.42.78.7/32
+    cni.projectcalico.org/podIPs: 10.42.78.7/32
+  creationTimestamp: "2020-06-27T10:00:15Z"
+  generateName: nginx-5cc5f59fb9-
+  labels:
+    pod-template-hash: 5cc5f59fb9
+    workload.user.cattle.io/workloadselector: deployment-default-nginx
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:cattle.io/timestamp: {}
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:pod-template-hash: {}
+          f:workload.user.cattle.io/workloadselector: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"e0fca4ac-7779-4984-b688-eefac6befaef"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:containers:
+          k:{"name":"nginx"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:securityContext:
+              .: {}
+              f:allowPrivilegeEscalation: {}
+              f:capabilities: {}
+              f:privileged: {}
+              f:readOnlyRootFilesystem: {}
+              f:runAsNonRoot: {}
+            f:stdin: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:tty: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2020-06-27T10:00:15Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:cni.projectcalico.org/podIP: {}
+          f:cni.projectcalico.org/podIPs: {}
+    manager: calico
+    operation: Update
+    time: "2020-06-27T10:00:18Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.42.78.7"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2020-06-27T10:00:24Z"
+  name: nginx-5cc5f59fb9-z4jbn
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: nginx-5cc5f59fb9
+    uid: e0fca4ac-7779-4984-b688-eefac6befaef
+  resourceVersion: "72283"
+  selfLink: /api/v1/namespaces/default/pods/nginx-5cc5f59fb9-z4jbn
+  uid: 9a973e2d-668b-4cda-a814-1f49215092e3
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: nginx
+    resources: {}
+    securityContext:
+      allowPrivilegeEscalation: false
+      capabilities: {}
+      privileged: false
+      readOnlyRootFilesystem: false
+      runAsNonRoot: false
+    stdin: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    tty: true
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-2bpm2
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: ip-172-31-95-51
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-2bpm2
+    secret:
+      defaultMode: 420
+      secretName: default-token-2bpm2
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2020-06-27T10:00:15Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2020-06-27T10:00:23Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2020-06-27T10:00:23Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2020-06-27T10:00:15Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://d60a71ac00693befe6fe45c2549e57e7d66d8d527feb8dc373286e7907ae34ec
+    image: nginx:latest
+    imageID: docker-pullable://nginx@sha256:21f32f6c08406306d822a0e6e8b7dc81f53f336570e852e25fbe1e3e3d0d0133
+    lastState: {}
+    name: nginx
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2020-06-27T10:00:22Z"
+  hostIP: 172.31.95.51
+  phase: Running
+  podIP: 10.42.78.7
+  podIPs:
+  - ip: 10.42.78.7
+  qosClass: BestEffort
+  startTime: "2020-06-27T10:00:15Z"
+                                           
